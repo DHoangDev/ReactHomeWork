@@ -26,11 +26,14 @@ export default class Menu extends Component {
                                 <a className="nav-link" href="#">About</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link">Contact Us</a>
+                                <a className="nav-link" href="#">Contact Us</a>
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button className="btn btn-outline-light mx-1">Login</button>
+                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Gio hang
+                            </button>
+                            <button className="btn btn-outline-light ms-2">Login</button>
                         </form>
                     </div>
                 </div>

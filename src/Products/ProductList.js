@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import InfoProduct from './InfoProduct/InfoProduct'
 import Product from './Product'
 
 export default class ProductList extends Component {
@@ -126,18 +127,28 @@ export default class ProductList extends Component {
         }
     ]
 
-    renderProduct() {
-        return
+    state = {
+        GioHang: []
+    }
+
+    themGioHang = (val) => {
+        let productAdded = { ...val }
+        let productArray = [];
+        productArray.push(productAdded)
+        this.setState({
+            GioHang: productArray
+        })
     }
 
     render() {
         return (
             <div className="container-md my-5">
+                <InfoProduct product={this.state.GioHang} />
                 <h2 className="text-center"><b>Product</b></h2>
                 <div className="row">
                     {
                         this.arrayProduct.map((element, index) => {
-                            return <Product product={element} key={index} />
+                            return <Product product={element} key={index} themGioHang={this.themGioHang} />
                         })
                     }
                 </div>
