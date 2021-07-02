@@ -8,31 +8,26 @@ export default class ProductList extends Component {
     array = this.props.products;
 
     state = {
-        arrayProduct: []
+        product: []
     }
 
-    show(val) {
-        let tempProduct = { ...val };
-        let tempArray = [];
-
-        tempArray.push(tempProduct)
-
+    changeToShow = (val) => {
         this.setState({
-            arrayProduct: tempArray
+            product: val
         })
     }
 
     render() {
         return (
             <div className="container-md">
-                <ProductDetail content={this.state.arrayProduct} />
+                <ProductDetail content={this.state.product} />
                 <div>
                     <h3><b>Cars List</b></h3>
                 </div>
                 <div className="row">
                     {
                         this.array.map((element, index) => {
-                            return <ProductItem product={element} key={index} show={this.show} />
+                            return <ProductItem product={element} key={index} changeToShow={this.changeToShow} />
                         })
                     }
                 </div>

@@ -12,7 +12,7 @@ export default class ProductItem extends Component {
                     <div className="card-body bg-dark text-light p-3">
                         <p>Name: {product.name}</p>
                         <p>Price: {product.price} $</p>
-                        <button type="button" className="btn btn-primary" onClick={() => { this.props.show(product) }} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" className="btn btn-primary" onClick={() => { this.props.changeToShow(product) }} data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Launch demo modal
                         </button>
                     </div>
