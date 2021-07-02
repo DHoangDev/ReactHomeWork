@@ -132,9 +132,12 @@ export default class ProductList extends Component {
     }
 
     themGioHang = (val) => {
-        let productAdded = { ...val }
-        let productArray = [];
-        productArray.push(productAdded)
+        let product = { ...val, soLuong: 1 }
+        let productArray = [...this.state.GioHang];
+
+        let productAdded = productArray.find(element => element.id === product.id)
+        productAdded ? productAdded.soLuong++ : productArray.push(product)
+
         this.setState({
             GioHang: productArray
         })

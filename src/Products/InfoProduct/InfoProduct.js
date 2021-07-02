@@ -33,8 +33,8 @@ export default class InfoProduct extends Component {
                                                 <td>{value.name}</td>
                                                 <td><img className="w-25" src={value.image}></img></td>
                                                 <td>{value.price}</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>{value.soLuong}</td>
+                                                <td>{value.soLuong * value.price}</td>
                                                 <td><button className="btn btn-danger">Delete</button></td>
                                             </tr>
                                         })
